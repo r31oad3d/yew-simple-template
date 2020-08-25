@@ -1,6 +1,7 @@
 #![recursion_limit = "512"]
 use wasm_bindgen::prelude::*;
 use yew::prelude::*;
+use log::*;
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
 #[cfg(feature = "wee_alloc")]
@@ -38,6 +39,7 @@ impl Component for Model {
     }
 
     fn view(&self) -> Html {
+        info!("rendered!");
         html! {
             <div>
                 <button onclick=self.link.callback(|_| Msg::AddOne)>{ "+1" }</button>
